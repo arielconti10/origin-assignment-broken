@@ -1,18 +1,25 @@
-$color: #ff9393;
+@import '../../styles/variables.scss';
 .VinInput {
     display: flex;
     input {
-        border-radius: 5px;
-        caret-color: #1056ad;
+        border-radius: $border-radius;
+        caret-color: $input-caret-color;
+        width: 100%;
+        padding: 15px;
+        border: none;
+        font-size: 1em;
+        background-color: $input-bg;
+        ::-webkit-input-placeholder {
+            color: #bbb
+        }
     }
     &__Error {
-        color: $color;
+        color: $error;
     }
+    
 }
 
-::-webkit-input-placeholder {
-    color: #bbb
-}
+
 
 *:focus {
     outline: none;
