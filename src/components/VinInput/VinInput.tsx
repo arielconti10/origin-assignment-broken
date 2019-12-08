@@ -1,5 +1,5 @@
 import * as React from "react"
-import { bindBem } from "../utils/bem"
+import { bindBem } from "../../utils/bem"
 import "./VinInput.scss"
 
 const { block, element } = bindBem("VinInput")

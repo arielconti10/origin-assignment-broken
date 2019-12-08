@@ -98,5 +98,10 @@
       "npx prettier --config .prettierrc --write",
       "git add"
     ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }

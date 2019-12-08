@@ -1,6 +1,6 @@
 import * as React from "react"
-import { Spinner } from "./Spinner"
-import { bindBem } from "../utils/bem"
+import { Spinner } from "../Spinner/Spinner"
+import { bindBem } from "../../utils/bem"
 import "./CarInfoPreview.scss"
 
 const { block, element } = bindBem("CarInfoPreview")
