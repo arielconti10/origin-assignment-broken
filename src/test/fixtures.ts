@@ -2,10 +2,11 @@ export const fixtureFactory = <T>(defaults: T) => (params: Partial<T> = {}) =>
     (({ ...(defaults as any), ...(params as any) } as any) as T)
 
 export const vinResultEntryFixture = fixtureFactory<VinResultEntry>({
-    Value: "Foo",
-    ValueId: "108",
-    Variable: "Name",
-    VariableId: 127
+    Make: "Ford",
+    Model: "Foo",
+    ModelYear: "108",
+    Trim: "test",
+    VehicleType: "foo"
 })
 
 export const vinCheckResponseFixture = fixtureFactory<VinCheckResponse>({
