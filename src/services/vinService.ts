@@ -27,9 +27,14 @@ export const apiCheck = async (_vin: string): Promise<CarInfo> => {
 
     return get(vinApiUrl)
         .then((data: VinCheckResponse) => {
-            if (!data || (data.Results.length === 0 && data.Results[0].Make === ""))
-                throw new Error("Something went wrong")
+            if (verifyError(data)) throw new Error("Something went wrong")
             return convert(data.Results[0])
         })
         .catch(err => err)
+}
+
+export const verifyError = (data: VinCheckResponse): boolean => {
+    if (!data) return true
+    if (data.Results.length === 0 || (data.Results[0].Make === "" && data.Results[0])) return true
+    return false
 }
