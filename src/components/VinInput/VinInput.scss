@@ -1,10 +1,11 @@
 @import '../../styles/variables.scss';
 .VinInput {
     display: flex;
+    flex-direction: column;
     input {
         border-radius: $border-radius;
         caret-color: $input-caret-color;
-        width: 100%;
+        width: calc(100% - 30px);
         padding: 15px;
         border: none;
         font-size: 1em;
@@ -13,8 +14,14 @@
             color: #bbb
         }
     }
+    &--invalid{
+        input{
+            border: 1px solid $error;
+        }
+    }
     &__Error {
         color: $error;
+        width: 100%;
     }
     
 }
