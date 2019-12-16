@@ -25,14 +25,17 @@ export const initialState: RootState = {
     vinValidationError: null
 }
 
-const dispatch_checkVinSuccess = (car: CarInfo) => ({ type: checkVinSuccess, payload: car })
-const dispatch_checkVinFail = (err: Error) => ({ type: checkVinFail, payload: err })
-
 export const checkVinCmd = (_vin: string) =>
     Cmd.run(vinService.apiCheck, {
         args: [_vin],
-        successActionCreator: dispatch_checkVinSuccess,
-        failActionCreator: dispatch_checkVinFail
+        successActionCreator: (car: CarInfo) => ({
+            type: checkVinSuccess,
+            payload: car
+        }),
+        failActionCreator: (error: Error) => ({
+            type: checkVinFail,
+            payload: error
+        })
     })
 
 export const reducer: LoopReducer<RootState, Actions> = (state, action: Actions) => {
