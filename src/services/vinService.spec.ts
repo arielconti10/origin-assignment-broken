@@ -46,10 +46,10 @@ describe("Vin Service", () => {
             }))
     })
 
-    // describe("Vin string filter", () => {
-    //     it("uppercases given string", () => expect(filter("abc")).toEqual("ABC"))
-    //     it("disallows IOQ", () => expect(filter("IOQabc")).toEqual("ABC"))
-    //     it("disallows ioq", () => expect(filter("ioqabc")).toEqual("ABC"))
-    //     it("trims to first 17 chars", () => expect(filter("SHHFN23607U002758abc")).toEqual("SHHFN23607U002758"))
-    // })
+    describe("Vin string filter", () => {
+        it("uppercases given string", () => expect(filter("abc")).toEqual("ABC"))
+        it("disallows IOQ", () => expect(filter("IOQabc")).toEqual("ABC"))
+        it("disallows ioq", () => expect(filter("ioqabc")).toEqual("ABC"))
+        it("trims to first 17 chars", () => expect(filter("SHHFN23607U002758abc")).toEqual("SHHFN23607U002758"))
+    })
 })
