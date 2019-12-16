@@ -13,6 +13,8 @@
         ::-webkit-input-placeholder {
             color: #bbb
         }
+        transition: $primary-transition;
+        -webkit-transition: $primary-transition;
     }
     &--invalid{
         input{
@@ -22,6 +24,8 @@
     &__Error {
         color: $error;
         width: 100%;
+        transform: translateY(50%);
+
     }
     
 }
