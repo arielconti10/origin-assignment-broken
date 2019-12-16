@@ -8,7 +8,7 @@ export const filter = (vin: string) =>
         .replace(invalidChars, "")
         .slice(0, 17)
 
-export const validate = (_vin: string): string => (_vin.length < 17 ? "Vin number must have 17 chars" : null)
+export const validate = (_vin: string): string => (_vin.length < 17 ? "17 chars expected" : null)
 
 export const convert = (_res: VinResultEntry): CarInfo => {
     return _res && _res.Make
