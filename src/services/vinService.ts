@@ -1,6 +1,6 @@
 import { get } from "../utils/https"
 
-const invalidChars = new RegExp(/[I]/, "g")
+const invalidChars = new RegExp(/[IOQ]/, "g")
 
 export const filter = (vin: string) =>
     vin
